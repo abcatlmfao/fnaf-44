@@ -28,5 +28,15 @@
 </head>
 <body>
   <iframe src="https://fnaf-4.github.io/games/FNAF4/index.html"></iframe>
+   <script>
+    // Wait until the iframe is fully loaded
+    document.getElementById('gameIframe').onload = function() {
+      var iframe = document.getElementById('gameIframe').contentWindow;
+      var audios = iframe.document.getElementsByTagName('audio');
+      for (var i = 0; i < audios.length; i++) {
+        audios[i].volume = 5.0;  // Set volume to full
+      }
+    }
+  </script>
 </body>
 </html>
